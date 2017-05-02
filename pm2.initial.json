@@ -1,0 +1,79 @@
+{
+  "apps": [
+    {
+      "name": "tracking_server",
+      "exec_interpreter": "node",
+      "script": "./tracking_service/main.js",
+      "cwd": ".",
+      "args": ["--dev"],
+      "watch": ["tracking_service", "package.json"],
+      "ignore_watch": ["tracking_service/runtime"],
+      "watch_options": {
+        "persistent": true,
+        "follow_symlinks": true
+      },
+      "log_date_format"  : "YYYY/MM/DD HH:mm Z",
+      "node_args": ["--harmony"],
+      "error_file": "./tracking_service/logs/stderr.log",
+      "out_file": "./tracking_service/logs/stdout.log",
+      "instances": 1,
+      "exec_mode": "fork",
+      "max_memory_restart": "1536M",
+      "autorestart": true,
+      "merge_logs": true,
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "log_server",
+      "exec_interpreter": "node",
+      "script": "./log_service/main.js",
+      "cwd": ".",
+      "args": ["--dev"],
+      "watch": ["log_service", "package.json"],
+      "ignore_watch": ["./log_service/logs"],
+      "watch_options": {
+        "persistent": true,
+        "follow_symlinks": true
+      },
+      "log_date_format"  : "YYYY/MM/DD HH:mm Z",
+      "node_args": ["--harmony"],
+      "error_file": "./log_service/logs/stderr.log",
+      "out_file": "./log_service/logs/stdout.log",
+      "instances": 1,
+      "exec_mode": "fork",
+      "max_memory_restart": "1536M",
+      "autorestart": true,
+      "merge_logs": true,
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "app_server",
+      "exec_interpreter": "node",
+      "script": "./app_server/main.js",
+      "cwd": ".",
+      "args": ["--dev"],
+      "watch": ["app_server", "package.json"],
+      "ignore_watch": ["./app_server/logs"],
+      "watch_options": {
+        "persistent": true,
+        "follow_symlinks": true
+      },
+      "log_date_format"  : "YYYY/MM/DD HH:mm Z",
+      "node_args": ["--harmony"],
+      "error_file": "./app_server/logs/stderr.log",
+      "out_file": "./app_server/logs/stdout.log",
+      "instances": 1,
+      "exec_mode": "fork",
+      "max_memory_restart": "1536M",
+      "autorestart": true,
+      "merge_logs": true,
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  ]
+}

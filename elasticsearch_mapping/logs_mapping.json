@@ -1,0 +1,27 @@
+// template name: sys_logs_template
+
+{
+  "template": "sys_logs",
+  "settings": {},
+  "mappings": {
+      "logs_bucket": {
+        "dynamic": "true",
+        "properties": {
+            "log_id": {
+                "type": "string"
+            },
+            "log_type": {
+                "type": "float"
+            },
+            "log_msg": {
+                "type": "string"
+            },
+            "created_date": {
+                "format": "yyyy-MM-dd HH:mm:ss",
+                "type": "date"
+            }
+        }
+      }
+  },
+  "aliases": {}
+}

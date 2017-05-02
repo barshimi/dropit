@@ -1,0 +1,37 @@
+// template name : bags_tracking_template
+{
+  "template": "bags_tracking",
+  "settings": {},
+  "mappings": {
+      "tracking_info": {
+        "dynamic": "true",
+        "properties": {
+            "bag_id": {
+                "type": "string"
+            },
+            "location_lat": {
+                "type": "float"
+            },
+            "location_lng": {
+                "type": "float"
+            },
+            "status": {
+                "type": "string"
+            },
+            "remarks": {
+               "type": "string"
+            },
+            "created_date": {
+                "format": "yyyy-MM-dd HH:mm:ss",
+                "type": "date"
+            },
+            "updated_date": {
+                "format": "yyyy-MM-dd HH:mm:ss",
+                "type": "date"
+            }
+        }
+      }
+  },
+  "aliases": {}
+}
+
